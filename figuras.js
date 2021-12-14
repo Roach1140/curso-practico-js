@@ -124,3 +124,88 @@ function areaCirculo(radio)
 
 console.groupEnd();
 
+
+// Aqui interactuamos con el Html Cuadrado
+
+function calcularPerimetroCuadrado()
+{
+    const input = document.getElementById("InputCuadrado");
+    const value = input.value;
+
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+}
+
+function calcularAreaCuadrado()
+{
+    const input = document.getElementById("InputCuadrado");
+    const value = input.value;
+    
+    const area = areaCuadrado(value);
+    alert(area);
+}
+
+// Aqui interactuamos con el Html Triangulo
+
+function calcularPerimetroTriangulo()
+{
+    var input = document.getElementById("InputLado_1");
+    const lado1 = Number(input.value);
+    var input = document.getElementById("InputLado_2");
+    const lado2 = Number(input.value);
+    var input = document.getElementById("InputBase");
+    const base = Number(input.value);
+    const perimetro = perimetroTriangulo(lado1, lado2, base);
+    alert(perimetro);
+}
+
+function calcularAreaTriangulo()
+{
+    var input = document.getElementById("InputBase");
+    const base = input.value;
+    var input = document.getElementById("InputAltura");
+    const altura = input.value;
+    const area = areaTriangulo(base, altura);
+    alert(area);
+}
+
+// Aqui interactuamos con el Html Circulo
+
+function calcularPerimetroCirculo()
+{
+    const input = document.getElementById("InputCirculo");
+    const value = input.value;
+    const perimetro = perimetroCirculo(value);
+    alert(perimetro);
+}
+
+function calcularAreaCirculo()
+{
+    const input = document.getElementById("InputCirculo");
+    const value = input.value;
+    const area = areaCirculo(value);
+    alert(area);
+}
+
+function alturaTrianguloIsosceles(trianguloGrandeLadoA, trianguloGrandeLadoB,
+     trianguloGrandeLadoBase){
+    
+    if (trianguloGrandeLadoA != trianguloGrandeLadoB)
+    {
+        console.error("Los lados a y b no son iguales");
+    }
+    else
+    {
+        const trianguloPequenoLadoB = trianguloGrandeLadoBase / 2;
+        const trianguloPequenoLadoBase = trianguloGrandeLadoA;
+
+        const trianguloPequenoLadoBCuadrado = trianguloPequenoLadoB * trianguloPequenoLadoB;
+        const trianguloPequenoLadoBaseCuadrado = trianguloPequenoLadoBase * trianguloPequenoLadoBase;
+        
+        const trianguloPequenoLadoA = Math.sqrt(trianguloPequenoLadoBaseCuadrado - trianguloPequenoLadoBCuadrado);
+
+        const trianguloGrandeAltura = trianguloPequenoLadoA;
+        
+        return trianguloGrandeAltura;
+    }
+}
