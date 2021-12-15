@@ -16,6 +16,11 @@
             color: white;
             place-items: center;
         }
+    .button
+    {
+        align-items: center;
+        animation: up 2s ease-in-out 3s forwards;
+    }
 </style>
     <title>Porcentajes y Descuentos | Curso Práctico de JS Platzi </title>
 </head>
@@ -32,8 +37,8 @@
             <label for="InputPrice">Escribe el precio de tu producto:</label><br />
             <input id = "InputPrice" type="number" /><br /><br />
 
-            <label for="InputDiscount">Escribe el descuento de tu producto:</label><br />
-            <input id = "InputDiscount" type="number" /><br /><br />
+            <label for="InputCupon">Escribe el Cupon de Descuento de tu Producto, Black 50%, First-Time 40%, Gold 35% :</label><br />
+            <input id = "InputCupon" type="text" /><br /><br />
 
             <button type = "button" onClick = "onClickButtonDiscount()"> 
                 Calcular el precio con descuento.

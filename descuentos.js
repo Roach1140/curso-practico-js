@@ -22,18 +22,33 @@ function onClickButtonDiscount(){
     const inputPrice = document.getElementById("InputPrice");
     const priceValue = inputPrice.value;
 
+    const inputCupon = document.getElementById("InputCupon");
+    const cuponValue = inputCupon.value;
 
-    const inputDiscount = document.getElementById("InputDiscount");
-    const discountValue = inputDiscount.value;
+    let descuento;
+    const cupon = [
+        "Black",
+        "First-Time",
+        "Gold",
+    ];
 
-    const precioConDescuento = calcularPrecioConDescuento(priceValue, discountValue);
+    switch(cuponValue){
+        case cupon[0]: 
+            descuento = 50;
+            break;
+
+        case cupon[1]:
+            descuento = 40;
+            break;
+
+        case cupon[2]:
+            descuento = 35;
+            break
+
+    }
+
+    const precioConDescuento = calcularPrecioConDescuento(priceValue, descuento);
 
     const resultP = document.getElementById("ResultP");
-    resultP.innerText = "El Precio con Descuento es: $ " + precioConDescuento;
+    resultP.innerText = "El Precio con Descuento es: $"+ precioConDescuento;
 }
-
-const coupons = [
-    "JuanDC_es_Batman",
-    "pero_no_le_digas_a_nadie",
-    "es_un_secreto",
-];
